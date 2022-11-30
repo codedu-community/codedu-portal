@@ -1,0 +1,44 @@
+.header{
+    display: flex;
+}
+
+.header-logo{
+    width: 60px;
+}
+.header .heading{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    margin-top: 15px;
+}
+.header-search{
+    margin-left: 5rem;
+    margin-top: 12px;
+}
+.search-icon{
+    font-size: 30px;
+    border-right: 2px solid #0166F4;
+    padding: 5px;
+}
+ .search-icon:focus{
+    color: #fff;
+}
+.search-bar::placeholder{
+    color: #fff;
+}
+.search-bar:focus{
+    background-color: #fff;
+}
+.search-bar:focus::placeholder{
+    color: #0166F4;
+}
+.nav-avatar{
+cursor: pointer;
+    float: right;
+}
+.side-menu{
+    font-size: 30px;
+    position: relative;
+    top: 20%;
+    padding-left: 10px;
+}
