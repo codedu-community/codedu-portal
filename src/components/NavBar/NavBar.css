@@ -15,6 +15,7 @@
     margin-left: 5rem;
     margin-top: 12px;
 }
+
 .search-icon{
     font-size: 30px;
     border-right: 2px solid #0166F4;
@@ -32,6 +33,12 @@
 .search-bar:focus::placeholder{
     color: #0166F4;
 }
+.menu-search-icon{
+    display: none;
+}
+.menu-search-bar{
+    display: none;
+}
 .nav-avatar{
 cursor: pointer;
     float: right;
@@ -41,4 +48,21 @@ cursor: pointer;
     position: relative;
     top: 20%;
     padding-left: 10px;
+}
+@media screen and (max-width:500px) {
+    .heading{
+        display: none;
+    }
+    .header-search .search-icon, .search-bar{
+        display: none;
+    }
+    .header{
+        width: 100%;
+    }
+    .menu-search-icon{
+        display: block;
+    }
+    .menu-search-bar{
+        display: block;
+    }
 }

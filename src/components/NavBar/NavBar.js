@@ -33,7 +33,7 @@ export default function NavBar() {
   const btnRef = React.useRef()
   return (
     <div>
-      <Box className='header' bg='#0166F4' w='100%' p={4} color='white'>
+      <Box className='header' bg='#0166F4'  p={4} color='white'>
       <Image src='https://res.cloudinary.com/dhex06aa8/image/upload/v1669658532/Codedu%20Community%20-%20Portal/white-logo_qefazl.png' className='header-logo' alt='Dan Abramov' />
       <Heading className='heading'>Codedu Communtiy</Heading>
       <Stack direction='row' spacing={4} className='header-search'>
@@ -44,17 +44,14 @@ export default function NavBar() {
         </Stack>
         <Spacer/>
         <Stack direction='row' className='nav-avatar'>
-  <Menu>
+  <Menu >
   <MenuButton rightIcon={<ChevronDownIcon />}>
-  <Avatar name='Krupesh Vithlani' src='https://bit.ly/broken-link'  
- />
+  <Avatar/>
   </MenuButton>
-  <MenuList>
-    <MenuItem>Download</MenuItem>
-    <MenuItem>Create a Copy</MenuItem>
-    <MenuItem>Mark as Draft</MenuItem>
-    <MenuItem>Delete</MenuItem>
-    <MenuItem>Attend a Workshop</MenuItem>
+  <MenuList bg='#0166f4'>
+    <MenuItem bg='#0166f4'  _hover={{background: "white", color:"#0166f4"}}>Register</MenuItem>
+    <MenuItem bg='#0166f4' _hover={{background: "white", color:"#0166f4"}}>Login</MenuItem>
+ 
   </MenuList>
 </Menu>
 <span className="side-menu" onClick={onOpen}><BiMenuAltRight/></span>
@@ -71,6 +68,12 @@ export default function NavBar() {
           <DrawerHeader>Menu</DrawerHeader>
 
           <DrawerBody>
+          <Stack direction='row' spacing={4} className='menu-search'>
+        <InputGroup>
+        <InputLeftElement pointerEvents='none' children={<BiSearchAlt color='#0166f4'  className='menu-search-icon'/>}/>
+      <Input width='35rem' className='menu-search-bar' placeholder='search 2000+ materials' type='search'   focusBorderColor='#c1c1c1' color='#0166f4' mb='20px' variant='filled' />
+      </InputGroup>
+        </Stack>
           <Link>DSA  <ExternalLinkIcon mx='2px' /></Link><br />
           <Link>Web Development  <ExternalLinkIcon mx='2px' /></Link><br />
           <Link>App Development  <ExternalLinkIcon mx='2px' /></Link><br />
