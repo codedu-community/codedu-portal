@@ -25,12 +25,15 @@ import { Box,
   Link} from '@chakra-ui/react';
 import{BiSearchAlt, BiMenuAltRight} from 'react-icons/bi';
 import {ChevronDownIcon, ExternalLinkIcon } from '@chakra-ui/icons';
+import { useAuth0 } from "@auth0/auth0-react";
 import './NavBar.css';
 
 export default function NavBar() {
   const toast = useToast()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef()
+  const { loginWithRedirect, logout, isAuthenticated,user } = useAuth0();
+
   return (
     <div>
       <Box className='header' bg='#0166F4'  p={4} color='white'>
@@ -48,10 +51,17 @@ export default function NavBar() {
   <MenuButton rightIcon={<ChevronDownIcon />}>
   <Avatar/>
   </MenuButton>
+  
   <MenuList bg='#0166f4'>
-    <MenuItem bg='#0166f4'  _hover={{background: "white", color:"#0166f4"}}>Register</MenuItem>
-    <MenuItem bg='#0166f4' _hover={{background: "white", color:"#0166f4"}}>Login</MenuItem>
- 
+    {
+      isAuthenticated ?
+    
+      <MenuItem bg='#0166f4' _hover={{background: "white", color:"#0166f4"}} onClick={() => logout({ returnTo: window.location.origin })}>{user.name} Logout</MenuItem>
+      :
+      
+
+    <MenuItem bg='#0166f4' _hover={{background: "white", color:"#0166f4"}} onClick={() => loginWithRedirect()}>Login</MenuItem>
+  }
   </MenuList>
 </Menu>
 <span className="side-menu" onClick={onOpen}><BiMenuAltRight/></span>
